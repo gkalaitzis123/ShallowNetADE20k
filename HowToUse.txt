@@ -1,0 +1,18 @@
+HOPEFULLY THIS MAY HELP A POOR STUDENT ONE DAY
+
+This stuff will lead to a trained model of YOLO on the ADE20k dataset
+
+##code to train model (run in this directory)
+
+from ultralytics import YOLO
+
+model = YOLO("yolov8n.yaml")
+
+results = model.train(data="ADE20k.yaml", epochs=WhateverYouWantHere)
+
+If you dont want to use the massive amount of labels in ADE20k, and would prefer a subset (whatever it may be),
+you will very very sadly have to write a script to parse through the JSONs of ADE20k in order to only extract objects from images with the
+correct classes. After that, just place the new list of classes (in python list format, ie [data1,data2,...]) and replace 1599 with the new length of the class list.
+
+HAVE FUN
+
